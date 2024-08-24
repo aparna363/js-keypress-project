@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+        body{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: skyblue;
+        }
+        .box{
+            width: 290px;
+            padding: 25px;
+            border-radius: 15px;
+            background: white;
+        }
+        .content,.key-code,.details{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box .content{
+            flex-direction:column ;
+        }
+        .content .key-code{
+            height: 110px;
+            width: 110px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            border: 5px solid rgb(27, 160, 212);
+        }
+        .key-code,.key-name{
+            font-size:45px;
+            color: rgb(27, 160, 212);
+            font-weight: 500;
+        }
+        .content .details{
+            width: 100%;
+            margin-top: 15px;
+            justify-content: space-evenly;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="content">
+            <div class="key-code"></div>
+            <div class="key-name"></div>
+            <div class="details">
+                <p class="key">Key : <span></span></p>
+                <p class="code">Code : <span></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("keydown", function(event) {
+            const keyCode = event.keyCode;
+            const keyName = event.key.toUpperCase();
+            const keyCodeElement = document.querySelector(".key-code");
+            const keyNameElement = document.querySelector(".key-name");
+            const keyElement = document.querySelector(".key span");
+            const codeElement = document.querySelector(".code span");
+
+            keyCodeElement.textContent = keyCode;
+            keyNameElement.textContent = keyName;
+            keyElement.textContent = keyName;
+            codeElement.textContent = keyCode;
+        });
+    </script>
+</body>
+</html>
